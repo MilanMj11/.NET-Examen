@@ -11,17 +11,35 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent implements OnInit{
   
-  title = 'Products-APP';
+  title = 'Examen NET';
   httpClient = inject(HttpClient);
-  products:any = [];
-  fetchProducts(): void{
-    this.httpClient.get('https://localhost:7199/api/Products').subscribe((data:any)=>{
-      this.products = data;
-      console.log(this.products);
+  produse:any = [];
+  comenzi:any = [];
+  utilizatori:any = [];
+
+  fetchComenzi(): void{
+    this.httpClient.get('https://localhost:7199/api/Comenzi').subscribe((data:any)=>{
+      this.comenzi = data;
+      console.log(this.comenzi);
+    });
+  }
+
+  fetchUtilizatori(): void{
+    this.httpClient.get('https://localhost:7199/api/Utilizatori').subscribe((data:any)=>{
+      this.utilizatori = data;
+      console.log(this.utilizatori);
+    });
+  }
+
+  fetchProduse(): void{
+    this.httpClient.get('https://localhost:7199/api/Produse').subscribe((data:any)=>{
+      this.produse = data;
+      console.log(this.produse);
     });
   }
 
   ngOnInit(): void {
-    this.fetchProducts();
+    this.fetchProduse();
+    this.fetchUtilizatori();
   }
 }

@@ -1,13 +1,34 @@
 <main class="main">
   <div class="content">
-      Products Data:
+      Examen Data:
+      <div> Produse : </div>
       <table>
-        @for(product of products;track product.id){
+        @for(produs of produse;track produs.id){
           <tr>
-            <td> {{product.id}} </td>
-            <td> {{product.name}} </td>
-            <td> {{product.price}} </td>
-            <td> {{product.units}} </td>
+            <td> {{produs.produsId}} </td>
+            <td> {{produs.name}} </td>
+            <td> {{produs.price}} </td>
+            <td> {{produs.units}} </td>
+          </tr>
+        }
+      </table>
+      <div> </div>
+      <table>
+        @for(comanda of comenzi;track comanda.id){
+          <tr>
+            <td> {{comanda.comandaId}} </td>
+            <td> {{comanda.name}} </td>
+            <td> {{comanda.description}} </td>
+          </tr>
+        }
+      </table>
+      <div> Utilizatori : </div>
+      <table>
+        @for(utilizator of utilizatori;track utilizator.id){
+          <tr>
+            <td> {{utilizator.utilizatorId}} </td>
+            <td> {{utilizator.name}} </td>
+            <td> {{utilizator.age}} </td>
           </tr>
         }
       </table>
