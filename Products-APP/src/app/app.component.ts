@@ -40,6 +40,7 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.fetchProduse();
+    this.fetchComenzi();
     this.fetchUtilizatori();
   }
 }
