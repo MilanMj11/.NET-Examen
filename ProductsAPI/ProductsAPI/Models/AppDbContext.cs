@@ -27,7 +27,7 @@ namespace ProductsAPI.Models
             modelBuilder.Entity<ComandaProdus>()
                 .HasOne(cp => cp.Produs)
                 .WithMany(p => p.ComandaProduse)
-                .HasForeignKey(cp => cp.ProdusId);
+                .HasForeignKey(cp => cp.ComandaId);
 
             modelBuilder.Entity<Comanda>()
                 .HasOne(c => c.Utilizator)
